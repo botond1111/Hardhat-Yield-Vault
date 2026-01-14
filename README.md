@@ -27,6 +27,7 @@ Test Coverage:
 🔒 Security: Prevents excessive withdrawals
 
 📂 Project Structure
+
 contracts/ - The smart contract source code (Vault & Mocks).
 
 test/ - TypeScript automated tests.
