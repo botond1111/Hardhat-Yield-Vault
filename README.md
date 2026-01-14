@@ -1,57 +1,34 @@
-# Sample Hardhat 3 Beta Project (`mocha` and `ethers`)
+# 🛡️ Hardhat Yield Vault (Professional Setup)
 
-This project showcases a Hardhat 3 Beta project using `mocha` for tests and the `ethers` library for Ethereum interactions.
+This repository demonstrates a **production-grade development environment** for smart contracts. Unlike browser-based simulations, this project utilizes **Hardhat** for local compilation, deployment, and automated testing.
 
-To learn more about the Hardhat 3 Beta, please visit the [Getting Started guide](https://hardhat.org/docs/getting-started#getting-started-with-hardhat-3). To share your feedback, join our [Hardhat 3 Beta](https://hardhat.org/hardhat3-beta-telegram-group) Telegram group or [open an issue](https://github.com/NomicFoundation/hardhat/issues/new) in our GitHub issue tracker.
+## 🛠 Tech Stack
+* **Framework:** Hardhat (TypeScript)
+* **Language:** Solidity ^0.8.20
+* **Testing:** Mocha, Chai & Hardhat Toolbox
+* **Security:** Custom Errors & Negative Testing patterns
 
-## Project Overview
+## 🧪 Automated Tests
+The project includes a comprehensive test suite covering both "Happy Paths" and "Edge Cases" (Security checks).
 
-This example project includes:
-
-- A simple Hardhat configuration file.
-- Foundry-compatible Solidity unit tests.
-- TypeScript integration tests using `mocha` and ethers.js
-- Examples demonstrating how to connect to different types of networks, including locally simulating OP mainnet.
-
-## Usage
-
-### Running Tests
-
-To run all the tests in the project, execute the following command:
-
-```shell
+To run the tests:
+```bash
 npx hardhat test
 ```
+Test Coverage:
+✅ Asset & Protocol Configuration
 
-You can also selectively run the Solidity or `mocha` tests:
+✅ Deposit Logic (Share Calculation)
 
-```shell
-npx hardhat test solidity
-npx hardhat test mocha
-```
+🔒 Security: Prevents 0 asset deposits
 
-### Make a deployment to Sepolia
+🔒 Security: Prevents 0 share withdrawals
 
-This project includes an example Ignition module to deploy the contract. You can deploy this module to a locally simulated chain or to Sepolia.
+🔒 Security: Prevents excessive withdrawals
 
-To run the deployment to a local chain:
+📂 Project Structure
+contracts/ - The smart contract source code (Vault & Mocks).
 
-```shell
-npx hardhat ignition deploy ignition/modules/Counter.ts
-```
+test/ - TypeScript automated tests.
 
-To run the deployment to Sepolia, you need an account with funds to send the transaction. The provided Hardhat configuration includes a Configuration Variable called `SEPOLIA_PRIVATE_KEY`, which you can use to set the private key of the account you want to use.
-
-You can set the `SEPOLIA_PRIVATE_KEY` variable using the `hardhat-keystore` plugin or by setting it as an environment variable.
-
-To set the `SEPOLIA_PRIVATE_KEY` config variable using `hardhat-keystore`:
-
-```shell
-npx hardhat keystore set SEPOLIA_PRIVATE_KEY
-```
-
-After setting the variable, you can run the deployment with the Sepolia network:
-
-```shell
-npx hardhat ignition deploy --network sepolia ignition/modules/Counter.ts
-```
+hardhat.config.ts - Network and compiler configuration.
