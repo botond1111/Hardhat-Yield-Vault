@@ -15,7 +15,7 @@ const config: HardhatUserConfig = {
       accounts: [PRIVATE_KEY],
     },
   },
-  // EZ AZ ÚJ BLOKK A VERIFIKÁLÁSHOZ:
+  // Etherscan verification configuration
   etherscan: {
     apiKey: ETHERSCAN_API_KEY,
   },
